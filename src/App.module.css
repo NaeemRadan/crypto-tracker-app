@@ -1,0 +1,249 @@
+:root {
+  
+  --bg-main: #121212;
+  --bg-surface: #1E1E1E;
+  --primary-text: #E0E0E0;
+  --secondary-text: #A0A0A0;
+  --border-color: #2C2C2C;
+  --gold-accent: #D4AF37;
+  --price-up: #4CAF50;
+  --price-down: #F44336;
+  --hover-bg: #2A2A2A;
+}
+
+ 
+html[data-theme='light'] {
+  --bg-main: #F4F6F8;
+  --bg-surface: #FFFFFF;
+  --primary-text: #121212;
+  --secondary-text: #6c757d;
+  --border-color: #dee2e6;
+  --gold-accent: #B8860B;  
+  --price-up: #198754;
+  --price-down: #dc3545;
+  --hover-bg: #e9ecef;
+}
+
+
+.outerContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--bg-main);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--primary-text);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;  
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.langSelector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.langButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  background-color: var(--bg-surface);
+  color: var(--primary-text);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.langButton:hover {
+  background-color: var(--hover-bg);
+  border-color: var(--gold-accent);
+}
+
+.langButton.active {
+  background-color: var(--gold-accent);
+  color: var(--bg-main);
+  font-weight: bold;
+  border-color: var(--gold-accent);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--gold-accent);
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+}
+
+.searchContainer {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  background-color: var(--bg-surface);
+  color: var(--primary-text);
+}
+.searchInput:focus {
+  outline: none;
+  border-color: var(--gold-accent);
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
+
+.tableContainer {
+  width: 100%;
+}
+
+.cryptoTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg-surface);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+.cryptoTable th,
+.cryptoTable td {
+  padding: 1.25rem 1rem;
+  text-align: inherit;
+}
+
+.cryptoTable thead {
+  background-color: rgba(0,0,0,0.2);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  color: var(--secondary-text);
+}
+
+.cryptoTable tbody tr {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cryptoTable tbody tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.cryptoTable tbody tr:last-child {
+  border-bottom: none;
+}
+
+.cryptoTable tbody tr:hover {
+  background-color: var(--hover-bg);
+}
+
+.tableRowClickable {
+  cursor: pointer;
+}
+
+.coinCell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+}
+
+.coinImage {
+  width: 2.25rem;
+  height: 2.25rem;
+  transition: transform 0.2s ease-in-out;
+}
+.coinCell:hover .coinImage {
+  transform: scale(1.1);
+}
+
+.priceUp {
+  color: var(--price-up);
+  font-weight: 500;
+}
+
+.priceDown {
+  color: var(--price-down);
+  font-weight: 500;
+}
+
+.dataCard {
+  background-color: var(--bg-surface);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+.dataCard h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: var(--secondary-text);
+  font-weight: normal;
+}
+
+.dataCard p {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: var(--primary-text);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem 0.5rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .cryptoTable thead {
+    display: none;
+  }
+
+  .cryptoTable tr {
+    display: block;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    background-color: var(--bg-surface);
+  }
+
+  .cryptoTable td {
+    display: block;
+    text-align: right !important;
+    padding-left: 50%;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .cryptoTable td:last-child {
+    border-bottom: none;
+  }
+
+  .cryptoTable td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0.75rem;
+    width: 45%;
+    padding-right: 0.75rem;
+    font-weight: bold;
+    text-align: left !important;
+    color: var(--secondary-text);
+  }
+
+  .coinCell {
+    justify-content: flex-end;
+  }
+}

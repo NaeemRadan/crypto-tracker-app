@@ -1,0 +1,19 @@
+{
+  "title": "Cryptocurrency Prices (Last 24h)",
+  "coin": "Coin",
+  "price": "Price (USD)",
+  "change": "Change (24h)",
+  "loading": "Loading data...",
+  "error": "Could not load currency data. Please try again later.",
+  "search_placeholder": "Search for a currency...",
+  "details_title": "Details for: {{coinName}}",
+  "market_cap": "Market Cap",
+  "volume_24h": "Volume (24h)",
+  "high_24h": "High (24h)",
+  "low_24h": "Low (24h)",
+  "about": "About {{coinName}}",
+  "back_to_main": "← Back to Main List",
+  "loading_details": "Loading details...",
+  "error_details": "Could not load coin details. Please try again.",
+  "not_found": "Coin data not found."
+}
